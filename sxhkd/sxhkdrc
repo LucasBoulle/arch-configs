@@ -1,9 +1,9 @@
 #
 # wm independent hotkeys
-super + shift + alt
-    setxkbmap us alt-intl 
-ctrl + shift + alt
-    setxkbmap br abnt2
+super + shift + @space
+  setxkbmap us alt-intl 
+ctrl + shift + @space 
+  setxkbmap br abnt2
 
 super + Return
 	alacritty
