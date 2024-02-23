@@ -3,7 +3,8 @@
 super + shift + @space
   setxkbmap us alt-intl 
 ctrl + shift + @space 
-  setxkbmap br abnt2
+  1password --quick-access
+  # setxkbmap br abnt2
 
 super + Return
 	alacritty
