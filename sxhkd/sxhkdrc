@@ -1,10 +1,13 @@
 #
 # wm independent hotkeys
-super + shift + @space
+super + shift + e
   setxkbmap us alt-intl 
+
+super + shift + p
+  setxkbmap br abnt2
+
 ctrl + shift + @space 
   1password --quick-access
-  # setxkbmap br abnt2
 
 super + Return
 	alacritty
@@ -123,3 +126,18 @@ super + alt + shift + {h,j,k,l}
 # move a floating window
 super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
+
+# adjust display brightness
+XF86MonBrightness{Up,Down}  
+  brightnessctl s 10000{+,-}
+
+#Volume Control
+XF86AudioLowerVolume
+  pamixer -d 5 #to decrease 5%
+
+XF86AudioRaiseVolume
+  pamixer -i 5 #to increase 5%
+
+XF86AudioMute
+        pamixer -t # toggle mute
+  
