@@ -4,12 +4,11 @@ pgrep -x sxhkd > /dev/null || sxhkd &
 
 # bspc monitor -d I II III IV V VI VII VIII IX X
 
-if [[ $(xrandr -q | grep "HDMI-1 connected") ]];
+if [[ $(xrandr -q | grep "DP-3 connected") ]];
   then
-    bspc monitor HDMI-1 -d I II III IV V
-    bspc monitor eDP-1 -d VI VII VIII IX X   
-    bspc monitor HDMI-1 -s eDP-1
-    xrandr --output HDMI-1 --right-of eDP-1 --mode 1920x1080 --rate 240 --primary
+    bspc monitor DP-3 -d I II III IV V VI VII VIII IX X
+    bspc monitor DP-3 -s eDP-1
+    xrandr --output DP-3 --primary -s 1920x1080
   else 
     bspc monitor eDP-1 -d I II III IV V VI VII VIII IX
 fi

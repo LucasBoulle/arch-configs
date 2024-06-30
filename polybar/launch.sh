@@ -21,7 +21,7 @@ launch_bar() {
 		# polybar -q main -c "$dir/$style/config.ini" &	
     # for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
 
-    if [[ $(xrandr -q | grep "HDMI-1 connected") ]];
+    if [[ $(xrandr -q | grep "DP-3 connected") ]];
       then
         polybar -q external -c "$dir/$style/config.ini" & 
     fi
