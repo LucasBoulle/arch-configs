@@ -1,7 +1,7 @@
 #
 # wm independent hotkeys
 super + shift + e
-  setxkbmap us alt-intl 
+  setxkbmap us intl 
 
 super + shift + p
   setxkbmap br abnt2
