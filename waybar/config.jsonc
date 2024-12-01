@@ -1,0 +1,115 @@
+{
+  "position": "top",
+  "layer": "top",
+  "modules-left": ["hyprland/workspaces"],
+  "modules-right": [
+    "tray",
+    "pulseaudio",
+    "clock#date",
+    "clock",
+    "battery",
+    "network"
+  ],
+  "modules-center": ["hyprland/window"],
+  // Modules configuration
+
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "format-icons": {
+      "active": "",
+      "default": "",
+      "empty": ""
+    }
+  },
+  "hyprland/window": {
+    "max-length": 60,
+    "format": " {}",
+    "rewrite": {
+      " ": " Empty workspace"
+    },
+    "separate-outputs": true
+  },
+  "custom/dot": {
+    "format": ":",
+    "interval": 100
+  },
+  "disk": {
+    "interval": 30,
+    "format": " {percentage_used}%",
+    "path": "/"
+  },
+
+  "sway/mode": {
+    "format": "<span style=\"italic\">{}</span>"
+  },
+  "tray": {
+    //"icon-size": 20,
+    "spacing": 10
+  },
+  "clock#date": {
+    "timezone": "America/Sao_Paulo",
+    "format": " {:%d %b}",
+    "interval": 1,
+    "on-click": "zenity --calendar"
+  },
+  "clock": {
+    "timezone": "America/Sao_Paulo",
+    "format": "{:%H:%M}",
+    "interval": 1,
+    "on-click": "zenity --calendar"
+  },
+  "cpu": {
+    "interval": 5,
+    "format": "{}%"
+  },
+  "pulseaudio/slider": {
+    "min": 0,
+    "max": 100,
+    "orientation": "horizontal"
+  },
+  "pulseaudio": {
+    "scroll-step": 5, // %, can be a float
+    "format": "{icon} {volume}%",
+    "format-muted": " Muted",
+    "format-icons": {
+      "default": ["", "", ""]
+    },
+    "on-click": "pavucontrol",
+    "on-click-middle": "pamixer -t"
+  },
+  "custom/updates": {
+    "format": "{icon} {}",
+    "return-type": "json",
+    "format-icons": {
+      "has-updates": "",
+      "updated": ""
+    },
+    "exec-if": "which waybar-module-pacman-updates",
+    "exec": "waybar-module-pacman-updates",
+    "on-click": "alacritty -e yay -Syyu"
+  },
+  "battery": {
+    "interval": 60,
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{capacity}% {icon} ",
+    "format-icons": ["", "", "", "", ""],
+    "max-length": 25
+  },
+  "network": {
+    "interface": "wlan0",
+    "format": "{ifname}",
+    "format-wifi": "{essid} ({signalStrength}%)  ",
+    "format-ethernet": "{ifname} ",
+    "format-disconnected": "", //An empty format will hide the module.
+    "format-disconnected": "",
+    "tooltip-format": "{ifname}",
+    "tooltip-format-wifi": "{essid} ({signalStrength}%)  ",
+    "tooltip-format-ethernet": "{ifname} ",
+    "tooltip-format-disconnected": "Disconnected",
+    "max-length": 50,
+    "on-click": "nm-applet --indicator"
+  }
+}
