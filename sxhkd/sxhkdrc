@@ -10,7 +10,7 @@ ctrl + shift + @space
   1password --quick-access
 
 super + Return
-	alacritty
+	wezterm
 
 # program launcher
 super + @space
